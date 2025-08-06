@@ -77,31 +77,43 @@ Because for us, it’s not just about where we go — it’s about how deeply we
       </div>
 
       {/* Testimonials */}
-      <div className="text-center">
-        <h2 className="text-3xl font-bold text-indigo-700 mb-10">What Our Clients Say</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {[
-            {
-              name: "Arjun Patel",
-              feedback:
-                "Yuvaraj Tex helped us cut 30% in unexpected downtime. Their preventive servicing model has truly changed our operational rhythm.",
-            },
-            {
-              name: "Fatima Rahman",
-              feedback:
-                "Their team doesn't just 'service' — they educate. We feel empowered, not dependent. A rare kind of partnership in today's world.",
-            },
-          ].map((t, i) => (
-            <div
-              key={i}
-              className="bg-white shadow-md rounded-xl p-6 border border-gray-200"
-            >
-              <p className="text-gray-800 italic">“{t.feedback}”</p>
-              <p className="mt-4 font-semibold text-indigo-600">{t.name}</p>
-            </div>
-          ))}
-        </div>
+      {/* Testimonials */}
+<div className="text-center">
+  <h2 className="text-3xl font-bold text-indigo-700 mb-10">What Our Clients Say</h2>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {[
+      {
+        name: "Arjun Patel",
+        feedback:
+          "Yuvaraj Tex helped us cut 30% in unexpected downtime. Their preventive servicing model has truly changed our operational rhythm.",
+      },
+      {
+        name: "Fatima Rahman",
+        feedback:
+          "Their team doesn't just 'service' — they educate. We feel empowered, not dependent. A rare kind of partnership in today's world.",
+      },
+      {
+        name: "Senthil Kumar",
+        feedback:
+          "We’ve been working with Yuvaraj Tex for over 3 years now. What stands out is their honesty and consistency — they treat our mill like their own. It’s more than a service, it’s a relationship built on trust.",
+      },
+      {
+        name: "Nguyen Thi Hoa",
+        feedback:
+          "From Vietnam to Tamil Nadu, finding a partner that understands both technology and people is rare. Yuvaraj Tex blends technical precision with genuine care. It’s felt in every visit, every follow-up.",
+      },
+    ].map((t, i) => (
+      <div
+        key={i}
+        className="bg-white shadow-md rounded-xl p-6 border border-gray-200"
+      >
+        <p className="text-gray-800 italic">“{t.feedback}”</p>
+        <p className="mt-4 font-semibold text-indigo-600">{t.name}</p>
       </div>
+    ))}
+  </div>
+</div>
+
 
       {/* Meet the Team */}
       <div className="text-center">
@@ -146,21 +158,34 @@ Because for us, it’s not just about where we go — it’s about how deeply we
 
       {/* Core Values Section */}
       <div className="text-center">
-        <h2 className="text-3xl font-bold text-indigo-700 mb-6">Our Core Values</h2>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-          {[
-            { title: "Integrity", desc: "Transparent service. No hidden fixes. No vague answers." },
-            { title: "Accountability", desc: "We own outcomes — not just tasks." },
-            { title: "Empathy", desc: "Every mill has a story. We listen before we solve." },
-            { title: "Excellence", desc: "Each service call is a commitment to peak performance." },
-          ].map((val, i) => (
-            <div key={i} className="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
-              <h4 className="text-lg font-semibold text-indigo-700 mb-2">{val.title}</h4>
-              <p className="text-gray-700">{val.desc}</p>
-            </div>
-          ))}
-        </div>
+  <h2 className="text-3xl font-bold text-indigo-700 mb-6">Our Core Values</h2>
+  <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+    {[
+      {
+        title: "Integrity",
+        desc: "We say what we mean, and we do what we promise — no shortcuts, no sugarcoating."
+      },
+      {
+        title: "Accountability",
+        desc: "Whether it’s a minor glitch or a major breakthrough — we take full ownership from start to finish."
+      },
+      {
+        title: "Empathy",
+        desc: "Behind every spinning unit is a team, a family, a livelihood. We hear you, understand you, and build solutions that fit your world."
+      },
+      {
+        title: "Excellence",
+        desc: "We don't settle for average. Every visit, every call, every fix — it's a step towards setting new standards."
+      },
+    ].map((val, i) => (
+      <div key={i} className="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
+        <h4 className="text-lg font-semibold text-indigo-700 mb-2">{val.title}</h4>
+        <p className="text-gray-700">{val.desc}</p>
       </div>
+    ))}
+  </div>
+</div>
+
     </div>
   );
 };
