@@ -20,7 +20,7 @@ const Navbar = () => {
   return (
     <header className="fixed w-full top-0 left-0 z-50 bg-white shadow-md backdrop-blur-lg bg-opacity-90">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8 py-4">
-        <Link to="/" className="text-2xl font-bold text-blue-600">YourBrand</Link>
+        <Link to="/" className="text-2xl font-bold text-blue-600">Yuvaraj Tex.</Link>
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex space-x-8 text-gray-700 font-medium">
