@@ -1,78 +1,75 @@
-import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
 const navLinks = [
-  { name: 'Home', path: '/' },
-  { name: 'About', path: '/about' },
-  { name: 'Services', path: '/services' },
-  { name: 'Careers', path: '/careers' },
-  { name: 'Contact', path: '/contact' },
+  { name: "Home", path: "/" },
+  { name: "About", path: "/about" },
+  { name: "Services", path: "/services" },
+  { name: "Careers", path: "/careers" },
+  { name: "Contact", path: "/contact" },
 ];
 
-export default function Navbar() {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
+  const { pathname } = useLocation();
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  const isActive = (path) => location.pathname === path;
-
   return (
-    <nav className="bg-white shadow-md fixed top-0 w-full z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-        <Link to="/" className="text-2xl font-bold text-indigo-600">YourBrand</Link>
+    <header className="fixed w-full top-0 left-0 z-50 bg-white shadow-md backdrop-blur-lg bg-opacity-90">
+      <div className="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8 py-4">
+        <Link to="/" className="text-2xl font-bold text-blue-600">YourBrand</Link>
 
-        {/* Desktop Links */}
-        <div className="hidden md:flex space-x-8">
+        {/* Desktop Menu */}
+        <nav className="hidden md:flex space-x-8 text-gray-700 font-medium">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               to={link.path}
-              className={`text-lg font-medium hover:text-indigo-500 transition-colors ${
-                isActive(link.path) ? 'text-indigo-600' : 'text-gray-700'
+              className={`hover:text-blue-600 transition ${
+                pathname === link.path ? "text-blue-600 font-semibold" : ""
               }`}
             >
               {link.name}
             </Link>
           ))}
-        </div>
+        </nav>
 
-        {/* Hamburger */}
-        <div className="md:hidden">
-          <button onClick={toggleMenu} className="text-gray-800 focus:outline-none">
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
-        </div>
+        {/* Mobile Menu Button */}
+        <button onClick={toggleMenu} className="md:hidden text-gray-700 focus:outline-none">
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Dropdown Menu */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
+          <motion.nav
             initial={{ height: 0 }}
-            animate={{ height: 'auto' }}
+            animate={{ height: "auto" }}
             exit={{ height: 0 }}
-            className="overflow-hidden bg-white shadow-md md:hidden"
+            transition={{ duration: 0.3 }}
+            className="md:hidden overflow-hidden bg-white px-4 sm:px-6 lg:px-8 pb-4"
           >
-            <div className="flex flex-col px-6 py-4 space-y-3">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.path}
-                  onClick={() => setIsOpen(false)}
-                  className={`text-base font-medium hover:text-indigo-500 ${
-                    isActive(link.path) ? 'text-indigo-600' : 'text-gray-700'
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </div>
-          </motion.div>
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                to={link.path}
+                onClick={() => setIsOpen(false)}
+                className={`block py-2 text-gray-700 border-b hover:text-blue-600 transition ${
+                  pathname === link.path ? "text-blue-600 font-semibold" : ""
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </motion.nav>
         )}
       </AnimatePresence>
-    </nav>
+    </header>
   );
-}
+};
+
+export default Navbar;
