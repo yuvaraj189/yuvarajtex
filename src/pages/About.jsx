@@ -121,18 +121,18 @@ Because for us, it’s not just about where we go — it’s about how deeply we
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {[
             {
-              name: "Yuvaraj Kumar",
+              name: "Selvaraj D",
               role: "Founder & Chief Engineer",
               bio: "Visionary leader with a deep passion for machinery optimization and sustainable industrial service models.",
             },
             {
-              name: "Meena S.",
-              role: "Global Operations Head",
+              name: "Abbas S",
+              role: "Operations Head",
               bio: "Orchestrates cross-border service schedules and client engagement with clockwork precision.",
             },
             {
-              name: "Prakash R.",
-              role: "Head of Technical Strategy",
+              name: "Nizar",
+              role: "Head of People",
               bio: "Champions innovation in service design, AI diagnostics, and field engineering excellence.",
             },
           ].map((member, i) => (
@@ -153,7 +153,7 @@ Because for us, it’s not just about where we go — it’s about how deeply we
         <blockquote className="text-xl italic text-indigo-900 font-medium">
           “Machines are only as efficient as the hands that care for them. At Yuvaraj Tex, we don't fix problems — we build performance.”
         </blockquote>
-        <p className="mt-4 text-indigo-700 font-semibold">– Yuvaraj Kumar, Founder</p>
+        <p className="mt-4 text-indigo-700 font-semibold">– Selvaraj, Founder</p>
       </div>
 
       {/* Core Values Section */}

@@ -67,18 +67,7 @@ const Contact = () => {
         </form>
 
         {/* Optional Google Form */}
-        <div className="mt-12 text-center">
-          <h4 className="text-lg font-semibold mb-2">Interested in joining us?</h4>
-          <p className="mb-4">Submit your application via our Google Form.</p>
-          <a
-            href="https://forms.gle/your-google-form-link"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-green-600 text-white px-5 py-2 rounded-md font-medium hover:bg-green-700"
-          >
-            Apply Now
-          </a>
-        </div>
+        
       </div>
     </div>
   );

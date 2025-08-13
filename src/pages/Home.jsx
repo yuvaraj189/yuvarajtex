@@ -2,7 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Settings, Wrench, Truck, Globe } from "lucide-react";
 import { Link } from 'react-router-dom';
-
+import oneImage from "../assets/1.jpeg";
+import aboutImage from "../assets/2.png";
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
   animate: { opacity: 1, y: 0 },
@@ -42,10 +43,10 @@ const Home = () => {
       viewport={{ once: true }}
     >
       <img
-        src="https://images.unsplash.com/photo-1605810230434-7631f2e74a01?auto=format&fit=crop&w=900&q=80"
-        alt="Spinning Machines"
-        className="rounded-2xl shadow-lg w-full object-cover max-h-[450px]"
-      />
+      src={oneImage}
+      alt="Spinning Machines"
+      className="rounded-2xl shadow-lg w-full object-cover max-h-[450px]"
+    />
     </motion.div>
   </div>
 </section>
@@ -100,15 +101,15 @@ const Home = () => {
       {/* About Section */}
       <section className="bg-blue-100 py-16">
         <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
-          <motion.img
-            src="https://images.unsplash.com/photo-1605902711622-cfb43c4437e1?auto=format&fit=crop&w=800&q=80"
-            alt="About us"
-            className="rounded-2xl shadow-lg"
-            initial={{ x: -40, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-          />
+           <motion.img
+      src={aboutImage}
+      alt="About us"
+      className="rounded-2xl shadow-lg"
+      initial={{ x: -40, opacity: 0 }}
+      whileInView={{ x: 0, opacity: 1 }}
+      transition={{ duration: 0.7 }}
+      viewport={{ once: true }}
+    />
           <motion.div
             initial={{ x: 40, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
